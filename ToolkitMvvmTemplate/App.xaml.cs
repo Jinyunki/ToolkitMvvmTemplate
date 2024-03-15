@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using ToolkitMvvmTemplate.ViewModels.Main;
 
 namespace ToolkitMvvmTemplate
 {
@@ -36,7 +37,8 @@ namespace ToolkitMvvmTemplate
         private static IServiceProvider ConfigureServices()
         {
             var services = new ServiceCollection();
-
+            //ViewModel 등록
+            services.AddTransient(typeof(MainViewModel));
 
             return services.BuildServiceProvider();
         }
